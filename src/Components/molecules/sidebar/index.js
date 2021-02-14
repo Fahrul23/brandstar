@@ -1,17 +1,21 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 function Sidebar(props) {
+
+    const history = useHistory();
+
     return (
         <>
             <div className="deznav">
             <div className="deznav-scroll">
 				<ul className="metismenu" id="menu">
-                    <li><a className="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <li><a onClick={()=> history.push('/')}  className=" ai-icon"  aria-expanded="false">
 							<i className="flaticon-381-networking"></i>
 							<span className="nav-text">Dashboard</span>
 						</a>
                     </li>
-                    <li><a className="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <li><a onClick={()=>{history.push('/product')}} className="ai-icon" aria-expanded="false">
 							<i className="flaticon-381-internet"></i>
 							<span className="nav-text">Product</span>
 						</a>

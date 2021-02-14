@@ -1,8 +1,9 @@
-import Footer from './footer';
-import Header from './header';
-import Loading from './loading';
-import Sidebar from './sidebar';
-import ProductItem from './product';
+import Footer from './Footer';
+import Header from './Header';
+import Loading from './Loading';
+import Sidebar from './Sidebar';
+import Filter from './Filter';
+import ProductItem from './ProductItem';
 
 
-export {Footer,Header,Loading,Sidebar,ProductItem}
+export {Footer,Header,Loading,Sidebar,Filter,ProductItem}

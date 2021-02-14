@@ -1,8 +1,8 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import GlobalReducer from './GlobalReducer';
-import HomeReducer from './HomeReducer';
+import ProductReducer from './ProductReducer';
 
 
-const reducer = combineReducers({HomeReducer,GlobalReducer})
+const reducer = combineReducers({ProductReducer,GlobalReducer})
 
 export default reducer;
