@@ -1,4 +1,5 @@
 import React from 'react';
+import ModalAddProduct from '../addproduct';
 
 function Filter(props) {
     return (
@@ -40,58 +41,10 @@ function Filter(props) {
                     <span className="fs-14">Based your preferences</span>
                 </div>
                 <div className="mb-0 mr-4 mt-3 mt-sm-0 mb-2">
-                    <button data-target="#basicModal" data-toggle="modal" class="btn btn-primary btn-rounded"><i class="las la-search scale5 mr-3"></i>Add New Product</button>
-                        <div class="modal fade" id="basicModal">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                          <h5 class="modal-title">Add New Product</h5>
-                                          <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
-                                          </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="form-group input-primary">
-                                            <label class="ml-1 mb-2">Name</label>
-                                            <input type="text" class="form-control"/>
-                                        </div>
-                                        <div class="form-group input-primary">
-                                            <label class="ml-1 mb-2">Category</label>
-                                            <select class="form-control default-select" id="sel1">
-                                                <option>Ember</option>
-                                                <option>Pot</option>
-                                                <option>Tempat Penyimpanan</option>
-                                                <option>Media Tanam</option>
-                                                <option>Tempat Sampah</option>
-                                            </select> 
-                                        </div>
-                                        <div class="form-group input-primary">
-                                            <label class="ml-1 mb-2">Price</label>
-                                            <input type="text" class="form-control"/>
-                                        </div>
-                                        <div class="form-group input-primary">
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input input-rounded" />
-                                                <label class="custom-file-label">Choose file</label>
-												
-                                            </div>   
-                                        </div>
-                                        <div class="form-group input-primary">
-                                            <label class="ml-1 mb-2">Description</label>
-                                            <textarea class="form-control" rows="3" id="comment"></textarea>
-                                            
-                                        </div>
-                                      </div>
-                                      <div class="modal-footer">
-                                          <button type="button" class="btn btn-danger light" data-dismiss="modal">Close</button>
-                                          <button type="button" class="btn btn-primary">Save changes</button>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
+                    <ModalAddProduct />
                 </div>
                 <a href="javascript:void(0);" className="mr-3 mb-2">
-                    <span className="border border-primary rounded-circle d-block sharp-lg">
-                                                </span>
+                    <span className="border border-primary rounded-circle d-block sharp-lg"></span>
                 </a>
                 <a href="javascript:void(0);" className="mb-2">
                     <span className="bg-primary rounded-circle d-block sharp-lg">
