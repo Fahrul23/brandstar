@@ -15,7 +15,7 @@ function Product(props) {
     
     useEffect(() => {
         dispatch(setDataProduct(counter))     
-    }, [counter]);
+    }, [counter,dispatch]);
 
     const next = () =>{
         setCounter(counter === page.totalPage ? page.totalPage : counter + 1)

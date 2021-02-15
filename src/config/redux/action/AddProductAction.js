@@ -1,5 +1,8 @@
 import axios from 'axios';
-
+import Swal from 'sweetalert2';
+import { useDispatch } from 'react-redux';
+import { setDataProduct } from './ProductAction';
+    
 export const setForm =(formType,formValue)=>{
     return {type:'SET_FORM_DATA',formType,formValue}
 }
@@ -21,8 +24,14 @@ export const postToApi = (form) =>{
             'content-type' : 'multipart/form-data'
         }
     })
-    .then(response =>{
-        console.log('success',response)
+    .then(response =>{        
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'new Product added successfully',
+            showConfirmButton: false,
+            timer: 3500
+          })
     })
     .catch(e => {
         console.log(e)
