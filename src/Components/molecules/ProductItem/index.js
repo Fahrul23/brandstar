@@ -1,6 +1,8 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 function ProductItem(props) {
+    const history = useHistory();
     return (
              <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
                 <div class="card">
@@ -10,7 +12,7 @@ function ProductItem(props) {
                                 <img class="img-fluid"  src={props.image} alt="ProductItem" />
                             </div>
                             <div class="new-arrival-content text-center mt-3">
-                                <h4><a href="ecom-product-detail.html">{props.name}</a></h4>
+                                <h4><button onClick={()=> history.push(`/detail/${props.id}`)} >{props.name}</button></h4>                                
                                 <ul class="star-rating">
                                     <li><i class="fa fa-star"></i></li>
                                     <li><i class="fa fa-star"></i></li>

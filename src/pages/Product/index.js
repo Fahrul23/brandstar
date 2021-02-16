@@ -37,7 +37,8 @@ function Product(props) {
                                     <ProductItem 
                                     image={`http://localhost:4000/${product.image}`}
                                     name={product.name}
-                                    price={product.price}/>  
+                                    price={product.price}
+                                    id={product._id}/>  
                                 )
                             })
                         }
