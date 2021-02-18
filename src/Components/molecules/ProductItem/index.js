@@ -9,10 +9,10 @@ function ProductItem(props) {
                     <div class="card-body">
                         <div class="new-arrival-product">
                             <div class="new-arrivals-img-contnent">
-                                <img class="img-fluid"  src={props.image} alt="ProductItem" />
+                                <img onClick={()=> history.push(`/detail/${props.id}`)} class="img-fluid"  src={props.image} alt="ProductItem" />
                             </div>
                             <div class="new-arrival-content text-center mt-3">
-                                <h4><button onClick={()=> history.push(`/detail/${props.id}`)} >{props.name}</button></h4>                                
+                                <h4><a onClick={()=> history.push(`/detail/${props.id}`)} >{props.name}</a></h4>                                
                                 <ul class="star-rating">
                                     <li><i class="fa fa-star"></i></li>
                                     <li><i class="fa fa-star"></i></li>

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import axios from 'axios';
+import { confirmAlert } from 'react-confirm-alert'; 
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 function DetailProduct(props) {
     
@@ -20,6 +22,34 @@ function DetailProduct(props) {
         } catch (e) {
             console.log(e.message)
         }
+    }
+
+    let backToProduct = ()=>{
+        history.push('/product')
+    }
+
+    let onDelete= ()=>{
+        confirmAlert({
+            title: 'Confirm to delete',
+            message: 'Are you sure to do this delete',
+            buttons: [
+              {
+                label: 'Yes',
+                onClick: () => {
+                    axios.delete(`http://localhost:4000/v1/product/delete/${id}`)
+                    .then(res =>{
+                        console.log('success delete',res.data);
+                        backToProduct()
+                    })
+                    .catch(e => console.log(e))
+                }
+              },
+              {
+                label: 'No',
+                onClick: () => alert('Click No')
+              }
+            ]
+        });
     }
     
     useEffect(()=>{
@@ -58,6 +88,9 @@ function DetailProduct(props) {
                                             <div class="product-detail-content">
                                                 <div class="new-arrival-content pr">
                                                     <h4>{data.name}</h4>
+                                                    <button type="button" onClick={() => onDelete()} class="btn btn-square btn-outline-danger float-right">Delete</button>
+                                                    <button type="button" class="btn btn-square btn-outline-primary float-right mr-2">Update</button>
+                                                
                                                     <div class="star-rating mb-2">
                                                         <ul class="produtct-detail-tag">
                                                             <li><i class="fa fa-star"></i></li>
